@@ -6,10 +6,10 @@ export default class Add extends Component {
     super(props);
     this.state = {
       termin: {
-        zeit: "",
         datum: "",
-        idZweck:0
+        zeit: ""
       },
+      idZweck:0,
       zwecke: [],
     };
   }
@@ -29,15 +29,17 @@ export default class Add extends Component {
     this.setState({termin:newTermin})
   };
   handleZweck = (event) => {
-    const newTermin={...this.state.termin}
-    newTermin.idZweck= event.target.value;
-    this.setState({termin:newTermin})
+    
+    const id = event.target.value;
+    this.setState({idZweck:id})
   };
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("submit");
-    const url="http://localhost:8080/buchung/termin/add/"+this.state.termin.idZweck
-    axios.post(url,{termin:this.state.termin}).then(()=>window.location.reload())
+ 
+    const url="http://localhost:8080/buchung/termin/add/"+this.state.idZweck
+    console.log("URL", url);
+    console.log(this.state.termin)
+    axios.post(url,this.state.termin).then(()=>window.location.reload())
   };
 
 

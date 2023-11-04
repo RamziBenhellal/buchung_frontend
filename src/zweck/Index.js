@@ -35,6 +35,7 @@ class Index extends Component {
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.bemerkung}</td>
+              <td><a href={"/zweck/edit/"+item.id}>bearbeiten</a></td>
             </tr>
           ))}
           </tbody>

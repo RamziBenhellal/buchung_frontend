@@ -6,6 +6,7 @@ import Home from "./Home";
 import Zweck from "./zweck/Index";
 import AddZweck from "./zweck/Add";
 import ZweckDetails from "./zweck/Details";
+import EditZweck from "./zweck/Edit"
 
 import Termin from "./termin/Index";
 import AddTermin from "./termin/Add";
@@ -24,6 +25,8 @@ class App extends Component {
           <Route path="/zweck/index" exact Component={Zweck} />
           <Route path="/zweck/add" exact Component={AddZweck} />
           <Route path="/zweck/details/:id" exact Component={ZweckDetails} />
+          <Route path="/zweck/edit/:id" exact Component={EditZweck} />
+
 
           <Route path="/termin/index" exact Component={Termin} />
           <Route path="/termin/add" exact Component={AddTermin} />
