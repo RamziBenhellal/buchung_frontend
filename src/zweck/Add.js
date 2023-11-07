@@ -1,52 +1,51 @@
 import axios from "axios";
-import React, { Component } from "react";
+import React, { Component, useEffect, useRef, useState } from "react";
+import {useHistory} from "react-router";
 
-class Add extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { zweck: {
-      name: "",
-      bemerkung:""
-    } };
+function Add(props) {
+  const [name, setName] = useState("");
+  const [bemerkung, setBemerkung] = useState("");
 
-  }
+  const refName = useRef();
+  const refBemerkung = useRef();
 
-  handleName = (event)=>{
-    const newZweck={...this.state.zweck}
-    newZweck.name= event.target.value;
-    this.setState({zweck:newZweck})
-    
-  }
 
-  handleBemerkung = (event)=>{
-    const newZweck={...this.state.zweck}
-    newZweck.bemerkung= event.target.value;
-    this.setState({zweck:newZweck})
-  }
-  handleSubmit = (event) =>{
+  const handleSubmit = (event) => {
     event.preventDefault();
     const url = "http://localhost:8080/buchung/zweck/add";
-    axios.post(url,this.state.zweck).then(response=>alert(response.data));
+    axios
+      .post(url, {
+        name: refName.current.value,
+        bemerkung: refBemerkung.current.value,
+      })
+      .then(alert("Zweck Added"));
+      
+  };
 
-  }
-  render() {
-    return <div>
+  return (
+    <div>
       <h1>Zweck Hinzufügen</h1>
-            <form>
-              <label>Name :</label>
-              <input type="text" name="name" onChange={this.handleName} />
-              <br/><br/>
-              <label>Bemerkung : </label>
-              <textarea rows="4" cols="50" name="bemerkung" onChange={this.handleBemerkung}></textarea>
-              <br/><br/>
-              <button  type="submit" onClick={this.handleSubmit}  >Hinzufügen</button>
-
-
+      <form>
+        <label>Name :</label>
+        <input type="text" name="name" ref={refName} />
+        <br />
+        <br />
+        <label>Bemerkung : </label>
+        <textarea
+          rows="4"
+          cols="50"
+          name="bemerkung"
+          ref={refBemerkung}
+        ></textarea>
+        <br />
+        <br />
+        <button type="submit" onClick={handleSubmit}>
+          Hinzufügen
+        </button>
       </form>
-
-
-    </div>;
-  }
+    </div>
+  );
 }
+
 
 export default Add;

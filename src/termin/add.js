@@ -77,7 +77,7 @@ export default class Add extends Component {
           </select>
           <br />
           <br />
-          <button type="submit">Speichern</button>
+          <button type="submit" onClick={this.handleSubmit}>Speichern</button>
         </form>
       </div>
     );

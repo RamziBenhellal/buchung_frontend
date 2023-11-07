@@ -34,7 +34,7 @@ export default function Edit() {
 
   return (
     <div>
-      <h1>Zweck Hinzufügen</h1>
+      <h1>Zweck bearbeiten</h1>
       <form>
         <label>Name :</label>
         <input type="text" defaultValue={name} ref={refName} />
@@ -51,7 +51,7 @@ export default function Edit() {
         <br />
         <br />
         <button type="submit" onClick={handleSubmit}>
-          Hinzufügen
+          bearbeiten
         </button>
       </form>
     </div>

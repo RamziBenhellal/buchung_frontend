@@ -19,13 +19,7 @@ class Home extends Component {
             >
               Learn React
             </a>
-            <a className="App-link" href="/">Home</a>
-            <a className="App-link" href="/zweck/index">Zwecke </a>
-            <a className="App-link" href="/zweck/add">Zweck hinzufügen</a> 
-            <a className="App-link" href="/zweck/details/1">Home</a>
-
-            <a className="App-link" href="/termin/index">Termin </a>
-            <a className="App-link" href="/termin/add">Zweck hinzufügen</a>
+            
 
 
           </header>

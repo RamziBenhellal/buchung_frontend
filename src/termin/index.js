@@ -36,6 +36,8 @@ export default class Index extends Component {
                 <td>{item.datum}</td>
                 <td>{item.zeit}</td>
                 <td>{item.zweck.name}</td>
+              <td><a href={"/termin/edit/"+item.terminNr}>Bearbeiten</a></td>
+              <td><a href={"/termin/details/"+item.terminNr}>Details</a></td>
               </tr>
             ))}
             </tbody>

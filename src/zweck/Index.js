@@ -16,6 +16,10 @@ class Index extends Component {
     axios.get(url).then((response) => this.setState({ zwecke: response.data }));
   }
 
+  handleDelete = (id)=>{
+    
+  }
+
   render() {
     
     return (
@@ -27,6 +31,7 @@ class Index extends Component {
             <th>Id</th>
             <th>Zweck</th>
             <th>Bemerkung</th>
+            <th>Aktion</th>
           </tr>
           </thead>
           <tbody>
@@ -35,7 +40,9 @@ class Index extends Component {
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.bemerkung}</td>
-              <td><a href={"/zweck/edit/"+item.id}>bearbeiten</a></td>
+              <td><a href={"/zweck/edit/"+item.id}>Bearbeiten</a></td>
+              <td><a href={"/zweck/details/"+item.id}>Details</a></td>
+              <td><button onClick={handleDelete => axios.delete("http://localhost:8080/buchung/zweck/delete/"+item.id)  }>Löchen</button></td>
             </tr>
           ))}
           </tbody>
