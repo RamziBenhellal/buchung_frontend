@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { Component, useEffect, useRef, useState } from "react";
-import {useHistory} from "react-router";
 
 function Add(props) {
   const [name, setName] = useState("");
