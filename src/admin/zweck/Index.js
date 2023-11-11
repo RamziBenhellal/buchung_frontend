@@ -24,7 +24,7 @@ class Index extends Component {
     
     return (
       <div>
-        <a href="/zweck/add">Zweck hinzufügen </a>
+        <a href="/admin/zweck/add">Zweck hinzufügen </a>
         <table>
           <thead>
           <tr>
@@ -40,8 +40,8 @@ class Index extends Component {
               <td>{item.id}</td>
               <td>{item.name}</td>
               <td>{item.bemerkung}</td>
-              <td><a href={"/zweck/edit/"+item.id}>Bearbeiten</a></td>
-              <td><a href={"/zweck/details/"+item.id}>Details</a></td>
+              <td><a href={"/admin/zweck/edit/"+item.id}>Bearbeiten</a></td>
+              <td><a href={"/admin/zweck/details/"+item.id}>Details</a></td>
               <td><button onClick={handleDelete => axios.delete("http://localhost:8080/buchung/zweck/delete/"+item.id)  }>Löchen</button></td>
             </tr>
           ))}

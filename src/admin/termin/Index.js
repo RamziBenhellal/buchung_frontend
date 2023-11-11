@@ -19,7 +19,7 @@ export default class Index extends Component {
 
     return (
         <div>
-          <a href="/termin/add">Termin hinzufügen</a>
+          <a href="/admin/termin/add">Termin hinzufügen</a>
           <table>
             <thead>
             <tr>
@@ -27,6 +27,9 @@ export default class Index extends Component {
               <th>Datum</th>
               <th>Zeit</th>
               <th>Zweck</th>
+              <th>Buchungsstatus</th>
+              <th>Aktion</th>
+
             </tr>
             </thead>
             <tbody>
@@ -36,8 +39,9 @@ export default class Index extends Component {
                 <td>{item.datum}</td>
                 <td>{item.zeit}</td>
                 <td>{item.zweck.name}</td>
-              <td><a href={"/termin/edit/"+item.terminNr}>Bearbeiten</a></td>
-              <td><a href={"/termin/details/"+item.terminNr}>Details</a></td>
+                <td>{item.status}</td>
+              <td><a href={"/admin/termin/edit/"+item.terminNr}>Bearbeiten</a></td>
+              <td><a href={"/admin/termin/details/"+item.terminNr}>Details</a></td>
               </tr>
             ))}
             </tbody>

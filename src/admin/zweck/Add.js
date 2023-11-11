@@ -1,9 +1,7 @@
 import axios from "axios";
-import React, { Component, useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 function Add(props) {
-  const [name, setName] = useState("");
-  const [bemerkung, setBemerkung] = useState("");
 
   const refName = useRef();
   const refBemerkung = useRef();
